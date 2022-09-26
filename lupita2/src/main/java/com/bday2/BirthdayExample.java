@@ -60,25 +60,29 @@ public class BirthdayExample {
     //
 
     /*
-     * students will need to change the path below to work on THEIR laptop. this is currently the path for my laptop.
-     * if students do not know or understand what a "path" is, students should first complete the
+     * students will need to change the path below to work on THEIR laptop. this is
+     * currently the path for my laptop.
+     * if students do not know or understand what a "path" is, students should first
+     * complete the
      * extra credit module on Files, Directories, and Folders in Canvas.
      */
-    String pathToFile =
-      "C:/Users/palme/OneDrive/Documents/GitHub/class-cis-084-java/Lupitas-Birthday-Look-Up2/.vscode/birthday.json";
+    String pathToFile = "C:/Users/palme/OneDrive/Documents/GitHub/class-cis-084-java/Lupitas-Birthday-Look-Up2/.vscode/birthday.json";
 
     JSONArray jsonData = readJSONArrayFile(pathToFile);
 
     // loop over list
     String birthday;
     JSONObject obj;
+    Map<String, String> hashMap = new HashMap<String, String>();
     for (Integer i = 0; i < jsonData.size(); i++) {
       // parse the object and pull out the name and birthday
       obj = (JSONObject) jsonData.get(i);
       birthday = (String) obj.get("birthday");
       name = (String) obj.get("name");
-      // System.out.println("name = " + name);
-      // System.out.println("birthday = " + birthday);
+       //System.out.println("name = " + name);
+       //System.out.println("birthday = " + birthday);
+       hashMap.put(name, birthday);
+       
     }
-  }
+  } 
 }
