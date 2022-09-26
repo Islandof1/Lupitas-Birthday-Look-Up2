@@ -65,7 +65,7 @@ public class BirthdayExample {
      * extra credit module on Files, Directories, and Folders in Canvas.
      */
     String pathToFile =
-      "C:/Users/jerom/Documents/GitHub/class-java/birthday-lupita-lookup-app/lupita/src/main/java/com/example/birthday.json";
+      "C:/Users/palme/OneDrive/Documents/GitHub/class-cis-084-java/Lupitas-Birthday-Look-Up2/.vscode/birthday.json";
 
     JSONArray jsonData = readJSONArrayFile(pathToFile);
 
