@@ -48,7 +48,6 @@ public class BirthdayExample {
     Scanner input = new Scanner(System.in);
     System.out.print("Enter a name:");
     String name = input.nextLine();
-
     // print user input
     System.out.println("name = " + name);
 
@@ -79,10 +78,32 @@ public class BirthdayExample {
       obj = (JSONObject) jsonData.get(i);
       birthday = (String) obj.get("birthday");
       name = (String) obj.get("name");
-       //System.out.println("name = " + name);
-       //System.out.println("birthday = " + birthday);
-       hashMap.put(name, birthday);
-       
+      // System.out.println("name = " + name);
+      // System.out.println("birthday = " + birthday);
+      hashMap.put(name, birthday);
+
     }
-  } 
+    // Set<Map.Entry<String, String>> hMapSet = hashMap.entrySet();
+
+    /*
+     * for (Map.Entry<String, String> hMap : hMapSet){
+     * System.out.println("Name: " + hMap.getKey() + "Birthday= " +
+     * hMap.getValue());
+     * 
+     * 
+     * }
+     * return;
+     */
+
+    boolean flag = hashMap.containsKey(name);
+    if (flag == true) {
+      // confirm key exsist
+      System.out.println("Name exsist in HashMap: ");
+      // get value by key
+      System.out.println("Birthday = " + hashMap.get(name));
+    } else {
+      System.out.println("Name does not Exsist in HashMap");
+    }
+
+  }
 }
