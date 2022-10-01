@@ -6,7 +6,16 @@ import org.json.simple.*;
 import org.json.simple.parser.*;
 
 public class BirthdayExample {
-
+  /*
+   * First read file from pom.xml
+   * Second as back up read JSON file from a file path on C drive.
+   * Loop throught Array and seperate the keys "name" from values "birthday"
+   * Insert Keys and Values into a HashMap
+   * Iterate Hashmap
+   * make a scan and system.in function
+   * Search
+   * 
+   */
   //
   // Func: ReadJSONFile
   // Desc: Reads a json file storing an array and returns an object
@@ -48,6 +57,7 @@ public class BirthdayExample {
     Scanner input = new Scanner(System.in);
     System.out.print("Enter a name:");
     String name = input.nextLine();
+
     // print user input
     System.out.println("name = " + name);
 
@@ -57,14 +67,6 @@ public class BirthdayExample {
     //
     // reads a json data file
     //
-
-    /*
-     * students will need to change the path below to work on THEIR laptop. this is
-     * currently the path for my laptop.
-     * if students do not know or understand what a "path" is, students should first
-     * complete the
-     * extra credit module on Files, Directories, and Folders in Canvas.
-     */
     String pathToFile = "C:/Users/palme/OneDrive/Documents/GitHub/class-cis-084-java/Lupitas-Birthday-Look-Up2/.vscode/birthday.json";
 
     JSONArray jsonData = readJSONArrayFile(pathToFile);
@@ -72,37 +74,25 @@ public class BirthdayExample {
     // loop over list
     String birthday;
     JSONObject obj;
-    Map<String, String> hashMap = new HashMap<String, String>();
+    // Create a HashMap
+
+    HashMap<String, String> hashMap = new HashMap<String, String>();
+    // Pushing array into HashMap
     for (Integer i = 0; i < jsonData.size(); i++) {
       // parse the object and pull out the name and birthday
       obj = (JSONObject) jsonData.get(i);
-      birthday = (String) obj.get("birthday");
       name = (String) obj.get("name");
-      // System.out.println("name = " + name);
-      // System.out.println("birthday = " + birthday);
+      birthday = (String) obj.get("birthday");
+
       hashMap.put(name, birthday);
-
     }
-    // Set<Map.Entry<String, String>> hMapSet = hashMap.entrySet();
+    if (hashMap.containsKey("birthday")) {
 
-    /*
-     * for (Map.Entry<String, String> hMap : hMapSet){
-     * System.out.println("Name: " + hMap.getKey() + "Birthday= " +
-     * hMap.getValue());
-     * 
-     * 
-     * }
-     * return;
-     */
+      // Mapping
+      String a = hashMap.get("birthday");
 
-    boolean flag = hashMap.containsKey(name);
-    if (flag == true) {
-      // confirm key exsist
-      System.out.println("Name exsist in HashMap: ");
-      // get value by key
-      System.out.println("Birthday = " + hashMap.get(name));
-    } else {
-      System.out.println("Name does not Exsist in HashMap");
+      // Printing value for the corresponding key
+      System.out.println("value for key" + " \"birthday\" is:- " + a);
     }
 
   }
