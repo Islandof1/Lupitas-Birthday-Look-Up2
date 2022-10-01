@@ -86,14 +86,17 @@ public class BirthdayExample {
 
       hashMap.put(name, birthday);
     }
-    if (hashMap.containsKey("birthday")) {
 
-      // Mapping
-      String a = hashMap.get("birthday");
+    for (Integer i = 0; i < jsonData.size(); i++) {
 
-      // Printing value for the corresponding key
-      System.out.println("value for key" + " \"birthday\" is:- " + a);
+      if (hashMap.containsKey("name")) {
+
+        // Mapping
+        String a = hashMap.get("birthday");
+
+        // Printing value for the corresponding key
+        System.out.println("value for key" + " \"birthday\" is:- " + a);
+      }
     }
-
   }
 }
