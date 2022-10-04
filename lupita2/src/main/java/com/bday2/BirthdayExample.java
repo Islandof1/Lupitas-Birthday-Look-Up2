@@ -8,15 +8,8 @@ import org.json.simple.parser.*;
 public class BirthdayExample {
   /*
    * Step 1 read JSON file
-   * Step 2 as back up read JSON file from a file path on C drive.
-   * Step 3 Loop throught Array and creat an objet and assign two key called
-   * "name " && "birthday"
-   * Step 4 Insert Keys and Values into a HashMap using the put.Method
-   * Step 5 Make a scan and system.in function
-   * Step 6 Enter a "name" and search HashMap for a value + birthday and value of
-   * birthday
-   * Step 7 Return bithday value.
-   * 
+   * Step 2 Put Array into HashMap
+   * Step 3 Scan HashMap and Retu return birthday
    */
   //
   // Func: ReadJSONFile
@@ -50,19 +43,7 @@ public class BirthdayExample {
   }
 
   public static void main(final String[] args) {
-    //
-    // reads a json data file
-    //
-    String pathToFile = "C:/Users/palme/OneDrive/Documents/GitHub/class-cis-084-java/Lupitas-Birthday-Look-Up2/.vscode/birthday.json";
-
-    JSONArray jsonData = readJSONArrayFile(pathToFile);
-
-    // loop over list
-    String birthday;
-    JSONObject obj;
-    // Create a HashMap
-
-    HashMap<String, String> hashMap = new HashMap<String, String>();
+    Map<String, String> hashMap = new HashMap<String, String>();
     //
     // how to read user input from keyboard
     //
@@ -79,6 +60,17 @@ public class BirthdayExample {
     // close the scanner
     input.close();
 
+    // reads a json data file
+    //
+    String pathToFile = "C:/Users/palme/OneDrive/Documents/GitHub/class-cis-084-java/Lupitas-Birthday-Look-Up2/.vscode/birthday.json";
+
+    JSONArray jsonData = readJSONArrayFile(pathToFile);
+
+    // loop over list
+    String birthday;
+    JSONObject obj;
+    // Create a HashMap
+
     // Pushing array into HashMap
     for (Integer i = 0; i < jsonData.size(); i++) {
       // parse the object and pull out the name and birthday
@@ -88,12 +80,10 @@ public class BirthdayExample {
 
       hashMap.put(name, birthday);
     }
-
-    // Mapping
-    String a = hashMap.get("Hazle Lesch");
-
-    // Printing value for the corresponding key
-    System.out.println("value for key" + " \"birthday\" is:- " + a);
-
+    // System.out.println("Birthday= " + bday);
+    // for(String key : hashMap.keySet()){
+    // System.out.println(key);
+    // }
+    // for(String values : hashMap.values());
   }
 }
