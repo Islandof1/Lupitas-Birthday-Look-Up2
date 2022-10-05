@@ -1,7 +1,7 @@
 package com.bday2;
 
 import java.io.*;
-import java.security.KeyStore.Entry;
+
 import java.util.*;
 import org.json.simple.*;
 import org.json.simple.parser.*;
@@ -10,7 +10,7 @@ public class BirthdayExample {
   /*
    * Step 1 read JSON file
    * Step 2 Put Array into HashMap
-   * Step 3 Scan HashMap and Retu return birthday
+   * Step 3 Scan HashMap and return birthday
    */
   //
   // Func: ReadJSONFile
@@ -55,6 +55,9 @@ public class BirthdayExample {
     System.out.print("Enter a name:");
     String name = input.nextLine();
 
+    // Print name
+    System.out.println("Name: " + name);
+
     // close the scanner
     input.close();
 
@@ -77,24 +80,10 @@ public class BirthdayExample {
       bname = (String) obj.get("name");
       birthday = (String) obj.get("birthday");
 
-      hashMap.put(name, birthday);
-
-      if (bname.contains(name)) {
-        System.out.println("Name: " + bname);
-        System.out.println("Birthday: " + birthday);
-      }
-
+      hashMap.put(bname, birthday);
     }
+    String x = hashMap.get(name);
+    System.out.println("Birthday: " + x);
 
-    // System.out.println("Birthday= " + name);
-
-    // System.out.println(hashMap);
-
-    // System.out.println("Birthday= " + hashMap.get(name));
-
-    // for(String key : hashMap.keySet()){
-    // System.out.println(key);
-    // }
-    // for(String values : hashMap.values());
   }
 }
