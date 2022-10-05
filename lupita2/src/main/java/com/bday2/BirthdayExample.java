@@ -1,6 +1,7 @@
 package com.bday2;
 
 import java.io.*;
+import java.security.KeyStore.Entry;
 import java.util.*;
 import org.json.simple.*;
 import org.json.simple.parser.*;
@@ -43,7 +44,7 @@ public class BirthdayExample {
   }
 
   public static void main(final String[] args) {
-    Map<String, String> hashMap = new HashMap<String, String>();
+
     //
     // how to read user input from keyboard
     //
@@ -53,9 +54,6 @@ public class BirthdayExample {
     Scanner input = new Scanner(System.in);
     System.out.print("Enter a name:");
     String name = input.nextLine();
-
-    // print user input
-    System.out.println("name = " + name);
 
     // close the scanner
     input.close();
@@ -68,19 +66,32 @@ public class BirthdayExample {
 
     // loop over list
     String birthday;
+    String bname;
     JSONObject obj;
     // Create a HashMap
-
+    Map<String, String> hashMap = new HashMap<String, String>();
     // Pushing array into HashMap
     for (Integer i = 0; i < jsonData.size(); i++) {
       // parse the object and pull out the name and birthday
       obj = (JSONObject) jsonData.get(i);
-      name = (String) obj.get("name");
+      bname = (String) obj.get("name");
       birthday = (String) obj.get("birthday");
 
       hashMap.put(name, birthday);
+
+      if (bname.contains(name)) {
+        System.out.println("Name: " + bname);
+        System.out.println("Birthday: " + birthday);
+      }
+
     }
-    // System.out.println("Birthday= " + bday);
+
+    // System.out.println("Birthday= " + name);
+
+    // System.out.println(hashMap);
+
+    // System.out.println("Birthday= " + hashMap.get(name));
+
     // for(String key : hashMap.keySet()){
     // System.out.println(key);
     // }
