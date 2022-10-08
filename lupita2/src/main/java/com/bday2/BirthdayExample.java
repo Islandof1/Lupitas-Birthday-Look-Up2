@@ -63,7 +63,7 @@ public class BirthdayExample {
 
     // reads a json data file
     //
-    String pathToFile = "C:/Users/palme/OneDrive/Documents/GitHub/class-cis-084-java/Lupitas-Birthday-Look-Up2/.vscode/birthday.json";
+    String pathToFile = "C:/Users/palme/Desktop/JSON/birthday.json";
 
     JSONArray jsonData = readJSONArrayFile(pathToFile);
 
