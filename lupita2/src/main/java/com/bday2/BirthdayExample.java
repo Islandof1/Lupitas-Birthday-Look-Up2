@@ -82,8 +82,8 @@ public class BirthdayExample {
 
       hashMap.put(bname, birthday);
     }
-    String x = hashMap.get(name);
-    System.out.println("Birthday: " + x);
+    String bDname = hashMap.get(name);
+    System.out.println("Birthday: " + bDname);
 
   }
 }
