@@ -10,7 +10,7 @@ public class BirthdayExample {
   /*
    * Step 1 read JSON file
    * Step 2 Put Array into HashMap
-   * Step 3 Scan HashMap and return birthday
+   * Step 3 Enter Key in HashMap and return birthday
    */
   //
   // Func: ReadJSONFile
@@ -60,7 +60,7 @@ public class BirthdayExample {
 
     // close the scanner
     input.close();
-
+    //
     // reads a json data file
     //
     String pathToFile = "C:/Users/palme/Desktop/JSON/birthday.json";
